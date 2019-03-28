@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objekt navigator</title>
+</head>
+<body>
+    <h1>Navigator</h1>
+    <p>gehört zum window object</p>
+
+        <h3>Property1</h3>
+        <p id="outp1"></p>
+        <h3>Property2</h3>
+        <p id="outp2"></p>
+        <h3>Property3</h3>
+        <p id="outp3"></p>
+        <h3>Property4</h3>
+        <p id="outp4"></p>
+        <h3>Property5</h3>
+        <p id="outp5"></p>
+        <h3>Property6</h3>
+        <p id="outp6"></p>
+        <h3>Property7</h3>
+        <p id="outp7"></p>
+        <h3>Property8</h3>
+        <p id="outp8"></p>
+        <h3>Property9</h3>
+        <p id="outp9"></p>
+
+    <script>
+        //appCodeName
+        outp1.innerHTML = "appCodeName: " + navigator.appCodeName;
+        //appName
+        outp2.innerHTML = "appName: " + navigator.appName;
+        //appVersion
+        outp3.innerHTML = "appVersion: " + navigator.appVersion;
+        //userAgent
+        outp4.innerHTML = "userAgent: " + navigator.userAgent;
+        //platform
+        outp5.innerHTML = "platform: " + navigator.platform;
+        //language
+        outp6.innerHTML = "language: " + navigator.language;
+        //plugins
+        outp7.innerHTML = "plugins: " + navigator.plugins.toString();//zeigt keine an, obwohl welche installiert
+
+        outp8.innerHTML = "javaEnabled(): " + navigator.javaEnabled();
+        console.log(navigator);
+    
+    </script>
+    
+</body>
+</html>

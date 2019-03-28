@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math Objekt</title>
+</head>
+<body>
+        <h3>Property PI</h3>
+        <p id="outp1"></p>
+        <h3>Methode2</h3>
+        <p id="outp2"></p>
+        <h3>Methode3</h3>
+        <p id="outp3"></p>
+        <h3>Methode4</h3>
+        <p id="outp4"></p>
+        <h3>Methode5</h3>
+        <p id="outp5"></p>
+
+        <script>
+            outp1.innerHTML = "Math.PI: " + Math.PI;
+            //random() ohne Argument
+            outp2.innerHTML = "Math.random() liefert eine Zufallszahl zwischen 0 und 1: " + Math.random();
+            //random()*eine_zahl
+            outp3.innerHTML = "Math.random(3) liefert eine Zufallszahl zwischen 1 und 3: " + Math.random()*3;
+            //floor()
+            outp4.innerHTML = "Math.floor(Math.PI) rundet die Zahl ab: " + Math.floor(Math.PI);
+            //cos()
+            outp5.innerHTML = "Math.cos(Math.PI): " + Math.cos(Math.PI);        
+        </script>
+    
+</body>
+</html>

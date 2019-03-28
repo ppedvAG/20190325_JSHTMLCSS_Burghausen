@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pfeilfunktion</title>
+  </head>
+  <body>
+    <p id="output"></p>
+    <script>
+      let elements = ["Kupfer", "Eisen", "Magnesium", "Aluminium"];
+      let results = [];
+
+      /* anonyme Funktion */
+
+      results = elements.map(function(el) {
+        return el.length;
+      });
+      output.innerHTML = "1. " + results;
+
+      /* arrow function */
+      results = elements.map((el) => {
+        return el.length;
+      });
+      output.innerHTML = "2. " + results;
+
+      /* Wenn nur ein Argument an die Pfeilfunktion übergeben,
+      runde Klammern optional */
+      results = elements.map(el => {
+        return el.length;
+      });
+      output.innerHTML = "3. " + results;
+
+      /* Wenn im Anweisungblock nur die return-Anweisung steht,
+      geschweifte Klammern mit Schlüsselwort return optional */
+      results = elements.map(el => el.length);
+      output.innerHTML = "4. " + results;
+
+      /* Interpolation */
+      results = elements.map(({length: fooVar}) => fooVar);
+      output.innerHTML = "5. " + results;
+
+      /* Interpolation kürzer */
+      results = elements.map(({length}) => length);
+      output.innerHTML = "6. " + results;
+    </script>
+  </body>
+</html>

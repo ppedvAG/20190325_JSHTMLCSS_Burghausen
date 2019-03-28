@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pseudoselektoren nth</title>
+    <style>
+      /* first-child */
+      /* nur die p werden selektiert,
+      die in ihrem Elternelement auch das erste Kindelement sind */
+/*       p:first-child {
+        color: firebrick;
+        font-size: 2em;
+      } */
+      /* last-child */
+/*       p:last-child {
+        color: firebrick;
+        font-size: 2em;
+      } */
+      /* only-child */
+/*       p:only-child {
+        color: firebrick;
+        font-size: 2em;
+      } */
+      /* nth-child(n) */
+/*       p:nth-child(3) {
+        color: firebrick;
+        font-size: 2em;
+      } */
+      /* first-of-type */
+      p:first-of-type {
+        color: firebrick;
+        font-size: 2em;
+      }
+      /* last-of-type */
+      /* only-of-type */
+      /* nth-of-type(n) */
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
+      <p>Paragraph 3</p>
+      <p>Paragraph 4</p>
+    </header>
+    <section>
+      <article>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <p>Paragraph 3</p>
+        <p>Paragraph 4</p>
+        <span>span in article</span>
+      </article>
+    </section>
+    <footer>
+      <p>Das einzige P in Footer</p>
+    </footer>
+  </body>
+</html>

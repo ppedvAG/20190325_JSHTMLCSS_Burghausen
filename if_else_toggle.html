@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">CSS mit JS ändern</p>
+    <button id="btn" onclick="change()">VERGRÖßERN</button>
+
+    <script>
+        function change() {
+            let big = demo;
+            if (big.style.fontSize == '35px') {
+                big.style.fontSize = 'initial';
+                btn.innerHTML = 'VERGRÖßERN';
+
+            } else {
+                big.style.fontSize = '35px';
+                btn.innerHTML = 'VERKLEINERN';
+            }
+        }
+    
+    </script>
+    
+</body>
+</html>

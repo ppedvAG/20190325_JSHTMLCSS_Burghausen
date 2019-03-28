@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lotto</title>
+</head>
+<body>    
+    <button onclick="randomSix()">Lottospiel</button>
+    <p id="output"></p>
+
+    <script>
+        function randomSix() {
+            let arr = [];
+            for (let i = 0; i < 6; i++) {
+                arr.push(Math.floor(Math.random()*49)+1);
+                /* +1 damit keine Null vorkommt */
+
+            }
+            //Math.random()
+            //Math.floor()
+            //for Schleife
+            //Array befüllen
+            output.innerHTML = arr;
+        }
+    
+    </script>
+    
+</body>
+</html>

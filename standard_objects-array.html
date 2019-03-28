@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array Objekt</title>
+</head>
+<body>
+
+        <h3>Methode1</h3>
+        <p id="outp1"></p>
+        <h3>Methode2</h3>
+        <p id="outp2"></p>
+        <p id="outp2_1"></p>
+        
+        <h3>Methode3</h3>
+        <p id="outp3"></p>
+        <h3>Methode4</h3>
+        <p id="outp4"></p>
+        <h3>Methode5</h3>
+        <p id="outp5"></p>
+        <p id="outp5_1"></p>
+        <h3>Methode6</h3>
+        <p id="outp6"></p>
+        <p id="outp6_1"></p>
+        <h3>Methode7</h3>
+        <p id="outp7"></p>
+        <p id="outp7_1"></p>
+        <h3>Methode8</h3>
+        <p id="outp8"></p>
+        <p id="outp8_1"></p>
+        <h3>Methode9</h3>
+        <p id="outp9"></p>
+        <p id="outp9_1"></p>
+        <h3>Methode10</h3>
+        <p id="outp10"></p>
+        <p id="outp10_1"></p>
+
+    <script>
+        let arr = ["el1", "el2"];
+        let myArr = new Array();//myArray = [];
+        let myArray = new Array(4);
+        myArray[0] = "Minsk";
+        myArray[1] = "Burghausen";
+        myArray[2] = "Altötting";
+        myArray[3] = "Sankt Marienkirchen";
+        myArray[4] = "Lauterbach";
+
+        //concat(arg1:array)
+        outp1.innerHTML = "concat(): " + myArray.concat();
+        //toString()
+
+        outp2.innerHTML = "toString(): ";
+        /* bei der Ausgabe in HTML wird automatisch in String überführt */
+        outp2_1.innerHTML = "myArray: " + myArray;
+        //join(zeichen:string)
+        outp3.innerHTML = "join(+): " + myArray.join();
+        //indexOf(element:datentyp_wie_im_array)
+        outp4.innerHTML = "indexOf(): ";
+
+        //unshift(neues_element:datentyp_wie_im_array)
+        outp5.innerHTML = "Was gibt unshift() zurück?";
+        outp5_1.innerHTML = "Wie sieht das Array jetzt aus?";
+
+        //push(neues_element:datentyp_wie_im_array)
+        outp6.innerHTML = "";
+        outp6_1.innerHTML = "Wie sieht das Array jetzt aus?";
+
+        //pop() //kann auch ohne Argument sein
+        outp7.innerHTML = "";
+        outp7_1.innerHTML = "Wie sieht das Array jetzt aus?";
+
+        //shift() //kann auch ohne Argument sein
+        outp8.innerHTML = "";
+        outp8_1.innerHTML = "Wie sieht das Array jetzt aus?";
+
+        /** splice(wo_hinzufügen:number, 
+        * wie_viele_elemente_löschen:number, 
+        * neues_element:datentyp_wie_im_array, 
+        * neues_element?:datentyp_wie_im_array) */
+        outp9.innerHTML = "splice(): ";
+        outp9_1.innerHTML = "Wie sieht das Array jetzt aus?";
+
+        //reverse() //ohne Argument
+        outp10.innerHTML = "reverse(): " + myArray.reverse();
+        outp10_1.innerHTML = "Wie sieht das Array jetzt aus?";
+    </script>
+    
+</body>
+</html>
