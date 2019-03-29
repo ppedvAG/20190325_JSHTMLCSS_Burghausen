@@ -4,49 +4,131 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>window Objekt</title>
+    <title>window object</title>
   </head>
   <body>
-    <p id="output"></p>
+    <h1>BOM window object</h1>
+    <h3>Links zu window</h3>
+    <ul>
+      <li>
+        <a href="https://www.w3schools.com/js/js_window.asp">w3schools</a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/de/docs/Web/API/Window"
+          >MDN web docs</a
+        >
+      </li>
+    </ul>
+    <!-- (h3{$. Property / Method }+button[onclick=""]{run}+p#outp$)*5 -->
+    <h3>1. Method alert()</h3>
+    <button onclick="alert('Method alert()');">demonstrate</button>
+
+    <h3>2. Method prompt()</h3>
+    <button onclick="demonstratePrompt()">demonstrate</button>
+    <p id="outp2"></p>
+
+    <h3>3. Method confirm()</h3>
+    <button onclick="demonstrateConfirm()">demonstrate</button>
+    <p id="outp3"></p>
+
+    <h3>4. Method setTimeout()</h3>
+    <button onclick="demonstrateSetTimeout()">demonstrate</button>
+
+    <h3>5. Methods setInterval() & clearInterval()</h3>
+    <button onclick="demonstrateSetInterval()">demonstrate</button>
+    <button onclick="clearInterval(intervalID)">stop demonstration</button>
+
+    <h3>6.Methods open(), blur(), focus() & close()</h3>
+    <button onclick="windowOpen()">Open ppedv</button>
+    <button onclick="windowBlur()">Blur ppedv</button>
+    <button onclick="windowFocus()">Focus ppedv</button>
+    <button onclick="windowClose()">Close ppedv</button>
+
+    <h3>Übung 'Digitale Uhr'</h3>
     <p id="aktuelleZeit"></p>
+
     <!-- <a href="javascript:window.close();">Schließen</a> -->
     <script>
-      window.console.log("Methode log() vom Objekt console vom Objekt window");
-
-      //alert()
-      //window.alert("Methode alert()");
+      //window.console.log("Methode log() vom Objekt console vom Objekt window");
 
       //prompt() mit oder ohne erklärenden Text
-      //let jahre = prompt("Geben Sie Ihr Alter an!");
-      //output.innerHTML = "eingegebene Zahl: " + jahre;
+      function demonstratePrompt() {
+        let jahre = prompt("Geben Sie Ihr Alter an:");
+        outp2.innerHTML = "eingegebene Zahl: " + jahre;
+      }
 
       //confirm()
-      //let conf = window.confirm("Drücke auf OK");
-      //output.innerHTML = conf; //true wenn 'OK', false wenn 'Abbrechen'
+      function demonstrateConfirm() {
+        let conf = window.confirm("Drücke auf OK");
+        outp3.innerHTML = "Rückgabewert von confirm() ist: " + conf; //true wenn 'OK', false wenn 'Abbrechen'
+      }
 
-      //open("URL", "Fenstername", "Optionen")
-      //window.open("https://ppedv.de");//Popup erstmal erlauben
+      //setTimeout()
+      function demonstrateSetTimeout() {
+        //setTimeout(js_anweisung:string, verzögerung:number)
+        window.setTimeout(
+          'window.confirm("Erscheinen von diesem Popup wurde um 2 sek verzögert");',
+          2000
+        );
+      }
 
-      //setTimeout(js_anweisung:string, verzögerung:number)
-      //window.setTimeout('window.confirm("Drücke auf OK");', 3000);
+      //setInterval()
+      var intervalID;
+      function demonstrateSetInterval() {
+        //setInterval(js_anweisung:string, nach_wie_vielen_milisecunden:number)
+        intervalID = window.setInterval(
+          //intervalID deklariert an dieser Stelle war für die andere Funktion nicht sichtbar. Warum? Die vars sollen ja außerhalb von Funktionen sichtbar sein
+          'window.confirm("ich erscheine jede 3 sek");',
+          3000
+        );
+        //console.log(intervalID);
+      }
 
-      //setInterval(js_anweisung:string, wie_oft:number)
-      //window.setInterval('window.confirm("Drücke auf OK");', 3000);      
+      //übung 'digitale Uhr'
       function tick() {
-        let d = new Date();        
+        let d = new Date();
         d = d.toLocaleTimeString();
         aktuelleZeit.innerHTML = d;
       }
-
       window.setInterval("tick();", 1000);
 
+      //window.open("https://ppedv.de");//Popup erstmal erlauben
       //focus()
-      //blur()
-      window.blur();
+      //blur()//close()//open("URL", "Fenstername", "Optionen")
+      //window.close(); //einfach so ausführen - geht nicht. sich selbst kann dieses Fenster nicht schließen. Skripte können keine Fenster schließen, die nicht von ihnen geöffnet wurden.
+      /* Das Beispiel kommt von https://www.geeksforgeeks.org/javascript-window-blur-and-window-focus-method/*/
 
-      //close()
+      var myWindow;
 
-      window.close();
+      // Function that opens the new Window
+      function windowOpen() {
+        myWindow = window.open(
+          "https://ppedv.de",
+          "_blank",
+          "width=400, height=450"
+        );
+        console.log(myWindow); //was ist about:blank? Kommt mir bekannt vor
+      }
+      /**
+       * firefox öffnet es in der Mitte
+       * chrome oben links
+       * edge ignoriert die Größenangaben
+       */
+
+      // function that closes the opened Window
+      function windowClose() {
+        myWindow.close(); //funktioniert in allen browsern
+      }
+
+      //function that blurs the opened Window
+      function windowBlur() {
+        myWindow.blur(); //funktioniert in chrome, in firefox und edge nicht
+      }
+
+      //function that focuses on opened Window
+      function windowFocus() {
+        myWindow.focus(); //funktioniert in chrome, in firefox und edge nicht
+      }
     </script>
   </body>
 </html>

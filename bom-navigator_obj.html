@@ -8,7 +8,8 @@
   </head>
   <body>
     <h1>Navigator</h1>
-    <p>gehört zum window object</p>
+
+    <h3>Links</h3>
     <ul>
       <li>
         <a href="https://www.w3schools.com/js/js_window_navigator.asp"
@@ -26,6 +27,8 @@
         >
       </li>
     </ul>
+    <h3>Beschreibung</h3>
+    <p>gehört zum window object</p>
 
     <h3>Property1</h3>
     <p id="outp1"></p>
@@ -72,16 +75,16 @@
 
       //plugins
       outp7.innerHTML = "plugins: " + navigator.plugins; //siehe Text in p oben
-      
+
       //beispiel genommen von MDN
       var pluginsLength = navigator.plugins.length;
 
       outp7_1.innerHTML =
         pluginsLength +
-        ' Plugin(s)<br>' +
+        " Plugin(s)<br>" +
         '<table id="pluginTable"><thead>' +
-        '<tr><th>Name</th><th>Filename</th><th>description</th><th>version</th></tr>' +
-        '</thead><tbody></tbody></table>';
+        "<tr><th>Name</th><th>Filename</th><th>description</th><th>version</th></tr>" +
+        "</thead><tbody></tbody></table>";
 
       var table = document.getElementById("pluginTable");
 
@@ -94,7 +97,7 @@
           ? navigator.plugins[i].version
           : "";
       }
-      
+
       //javaEnabled()
       outp8.innerHTML = "javaEnabled(): " + navigator.javaEnabled();
       console.log(navigator);
