@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date Objekt</title>
+</head>
+<body>
+        <h3>Instanz vom Objekt Date</h3>
+        <p id="outp1"></p>
+        <h3>Methode2</h3>
+        <p id="outp2"></p>
+        <h3>Methode3</h3>
+        <p id="outp3"></p>
+        <h3>Methode4</h3>
+        <p id="outp4"></p>
+        <h3>Methode5</h3>
+        <p id="outp5"></p>
+        <h3>Methode6</h3>
+        <p id="outp6"></p>
+
+        <script>
+            let datum = new Date();
+            outp1.innerHTML = "datum" + datum;
+            //getDate()
+            outp2.innerHTML = "getDate(): " + datum.getDate();
+            //getDay()
+            outp3.innerHTML = "getDay(): " + datum.getDay();
+            //getTime()
+            outp4.innerHTML = "getTime(): " + datum.getTime();
+            //getFullYear()
+            outp5.innerHTML = "getFullYear(): " + datum.getFullYear();
+            //setDate() - setzt nur das Datum fest. mögliche Werte - von 1 bis 31
+            datum.setDate(15);
+            outp6.innerHTML = "Datum-Objekt mit geändertem Datum" + datum;   
+        </script>
+    
+</body>
+</html>

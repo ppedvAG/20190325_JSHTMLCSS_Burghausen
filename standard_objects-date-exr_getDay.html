@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Übung switch() & getDay()</title>
+</head>
+<body>
+    <p>Clicke, um Angebot für heute zu sehen</p>
+    <button onclick="textOutput(new Date())" id="btn">OK</button>
+    <br>
+    <label for="datePicker">Oder wähle ein Datum aus:</label>
+    <input type="date" id="datePicker" onchange="textOutput(this.value)">    
+    <p id="output"></p>
+
+    <script>
+        function textOutput(datum) {
+            let d = new Date(datum);
+            console.log(d);
+            d = d.getDay();
+            //console.log(d);
+            switch(d) {
+                case 1:
+                output.innerHTML = "Angebot des Tages: Pizza";
+                break;
+                case 2:
+                output.innerHTML = "Angebot des Tages: Döner";
+                break;
+                case 3:
+                output.innerHTML = "Mittwoch: Angebot des Tages: Burger";
+                break;
+                case 4:
+                output.innerHTML = "Angebot des Tages: Pasta";
+                break;
+                case 5:
+                output.innerHTML = "Angebot des Tages: Pilzpfanne";
+                break;
+                case 6:
+                output.innerHTML = "Angebot des Tages: Gemüsepfanne";
+                break;
+                case 0:
+                output.innerHTML = "Angebot des Tages: Salat";
+                break;
+                default: 
+                output.innerHTML = "Geben Sie einen Wochentag ein";
+
+            }
+        }
+    </script>
+    
+</body>
+</html>

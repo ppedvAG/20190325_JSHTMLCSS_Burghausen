@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Objekt navigator</title>
+  </head>
+  <body>
+    <h1>Navigator</h1>
+    <p>gehört zum window object</p>
+    <ul>
+      <li>
+        <a href="https://www.w3schools.com/js/js_window_navigator.asp"
+          >Navigator at w3schools</a
+        >
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/de/docs/Web/API/Window/navigator"
+          >Property navigator from window object at MDN web docs (DE)</a
+        >
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/de/docs/Web/API/Navigator"
+          >Navigator API at MDN web docs (EN)</a
+        >
+      </li>
+    </ul>
+
+    <h3>Property1</h3>
+    <p id="outp1"></p>
+    <h3>Property2</h3>
+    <p id="outp2"></p>
+    <h3>Property3</h3>
+    <p id="outp3"></p>
+    <h3>Property4</h3>
+    <p id="outp4"></p>
+    <h3>Property5</h3>
+    <p id="outp5"></p>
+    <h3>Property6</h3>
+    <p id="outp6"></p>
+    <h3>Property7</h3>
+    navigator.plugins liefert ein Array zurück, aber es ist kein herkömmliches
+    JS Array. Mit innerHTML werden die Elemente aus dem Array nicht angezeigt,
+    wie es man von einem JS Array erwartet. Dieses Array hat trotzdem die
+    Eigenschaft .length und auf dessen Elemente kann man mit [index] zugreifen.
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/API/NavigatorPlugins/plugins"
+      >MDN web docs</a
+    >
+    <p id="outp7"></p>
+    <p id="outp7_1"></p>
+
+    <h3>Property8</h3>
+    <p id="outp8"></p>
+    <h3>Property9</h3>
+    <p id="outp9"></p>
+
+    <script>
+      //appCodeName
+      outp1.innerHTML = "appCodeName: " + navigator.appCodeName;
+      //appName
+      outp2.innerHTML = "appName: " + navigator.appName;
+      //appVersion
+      outp3.innerHTML = "appVersion: " + navigator.appVersion;
+      //userAgent
+      outp4.innerHTML = "userAgent: " + navigator.userAgent;
+      //platform
+      outp5.innerHTML = "platform: " + navigator.platform;
+      //language
+      outp6.innerHTML = "language: " + navigator.language;
+
+      //plugins
+      outp7.innerHTML = "plugins: " + navigator.plugins; //siehe Text in p oben
+      
+      //beispiel genommen von MDN
+      var pluginsLength = navigator.plugins.length;
+
+      outp7_1.innerHTML =
+        pluginsLength +
+        ' Plugin(s)<br>' +
+        '<table id="pluginTable"><thead>' +
+        '<tr><th>Name</th><th>Filename</th><th>description</th><th>version</th></tr>' +
+        '</thead><tbody></tbody></table>';
+
+      var table = document.getElementById("pluginTable");
+
+      for (var i = 0; i < pluginsLength; i++) {
+        let newRow = table.insertRow();
+        newRow.insertCell().textContent = navigator.plugins[i].name;
+        newRow.insertCell().textContent = navigator.plugins[i].filename;
+        newRow.insertCell().textContent = navigator.plugins[i].description;
+        newRow.insertCell().textContent = navigator.plugins[i].version
+          ? navigator.plugins[i].version
+          : "";
+      }
+      
+      //javaEnabled()
+      outp8.innerHTML = "javaEnabled(): " + navigator.javaEnabled();
+      console.log(navigator);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>window Objekt</title>
+  </head>
+  <body>
+    <p id="output"></p>
+    <p id="aktuelleZeit"></p>
+    <!-- <a href="javascript:window.close();">Schließen</a> -->
+    <script>
+      window.console.log("Methode log() vom Objekt console vom Objekt window");
+
+      //alert()
+      //window.alert("Methode alert()");
+
+      //prompt() mit oder ohne erklärenden Text
+      //let jahre = prompt("Geben Sie Ihr Alter an!");
+      //output.innerHTML = "eingegebene Zahl: " + jahre;
+
+      //confirm()
+      //let conf = window.confirm("Drücke auf OK");
+      //output.innerHTML = conf; //true wenn 'OK', false wenn 'Abbrechen'
+
+      //open("URL", "Fenstername", "Optionen")
+      //window.open("https://ppedv.de");//Popup erstmal erlauben
+
+      //setTimeout(js_anweisung:string, verzögerung:number)
+      //window.setTimeout('window.confirm("Drücke auf OK");', 3000);
+
+      //setInterval(js_anweisung:string, wie_oft:number)
+      //window.setInterval('window.confirm("Drücke auf OK");', 3000);      
+      function tick() {
+        let d = new Date();        
+        d = d.toLocaleTimeString();
+        aktuelleZeit.innerHTML = d;
+      }
+
+      window.setInterval("tick();", 1000);
+
+      //focus()
+      //blur()
+      window.blur();
+
+      //close()
+
+      window.close();
+    </script>
+  </body>
+</html>

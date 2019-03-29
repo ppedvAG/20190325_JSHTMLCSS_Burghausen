@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number Objekt</title>
+</head>
+<body>
+        <h3>MAX_VALUE</h3>
+        <p id="outp1"></p>
+        <h3>MIN_VALUE</h3>
+        <p id="outp2"></p>
+        <h3>Methode3</h3>
+        <p id="outp3"></p>
+        <h3>Methode4</h3>
+        <p id="outp4"></p>
+        <h3>Methode5</h3>
+        <p id="outp5"></p>
+        <h3>Methode6</h3>
+        <p id="outp6"></p>
+        <h3>Methode7</h3>
+        <p id="outp7"></p>
+        <h3>Methode8</h3>
+        <p id="outp8"></p>
+        <h3>Methode9</h3>
+        <p id="outp9"></p>
+
+        <script>
+            outp1.innerHTML = "Number.MAX_VALUE: " + Number.MAX_VALUE;//1.7976931348623157e+308
+            outp2.innerHTML =  "Number.MIN_VALUE: " + Number.MIN_VALUE; //5e-324 eine 5 mit 324 Nullen davor
+            let myNumber = new Number();
+            myNumber = 6e-330; 
+            outp3.innerHTML = "Kleiner als MIN_VALUE: " + myNumber; //0
+            myNumber = 1.7976931348623157e+310;
+            outp4.innerHTML = "Größer als MAX_VALUE: " + myNumber;//Infinity
+            myNumber = "w";
+            outp5.innerHTML = "NaN: " + myNumber.valueOf; //NaN not a number
+
+            //toFixed(wie_viele_Nachkommastellen_lassen:number)
+            myNumber = 4.457;
+            outp6.innerHTML = "myNumber.toFixed(2): " + myNumber.toFixed(2);
+            //verändert nicht den Wert der Variable
+
+            //toString()
+            outp7.innerHTML = "myNumber.toString(): " + myNumber.toString();
+            //valueOf()
+            outp8.innerHTML = "myNumber.valueOf(): " + myNumber.valueOf();
+            console.log(myNumber.toFixed(2).valueOf());
+
+            myNumber = 1797693134862.3157;
+            //toExponential()
+            document.getElementById("outp9").innerHTML = "myNumber.toExponential(): " + myNumber.toExponential();
+                
+        </script>
+    
+</body>
+</html>

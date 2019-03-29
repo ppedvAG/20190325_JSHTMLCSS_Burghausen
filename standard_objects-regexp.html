@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Regular Expressions</title>
+</head>
+<body>
+    <p id="output"></p>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+
+
+    <script>
+        /* Grundlagen */
+        let reg = new RegExp("a+");
+        let reg1 = /a+/i;
+        let text = "Hallo an alle";
+        if (reg1.test(text)) {
+            output.innerHTML = "ein a/A gefunden";
+        } else {
+            output.innerHTML = "kein Resultat";
+        }
+
+        /* Die Suche beim ersten Treffer nicht anhalten */
+        let reg2 = /Kuchen/ig;
+        let text2 = "Wir haben hier Kuchen" +
+        "Magst du auch kuchen" + 
+        "Wir alle mögen kuCHen";
+        let results2 = reg2.exec(text2);
+        while(results2) {
+            output1.innerHTML += results2[0] + "<br>";
+            results2 = reg2.exec(text2);
+        }
+
+        /* Methode replace */
+        let reg3 = /(\w+)\s(\w+)/;
+        let text3 = "John Smith";
+        let neutext = text3.replace(reg3, "$2, $1");
+        output2.innerHTML = neutext;
+
+        /* Methode search */
+        let reg4 = /ppedv/i;
+        let text4 = "Wir sind bei Ppedv zu Besuch. Morgen verlassen einige ppedv";
+        let result4 = text4.search(reg4);
+        output3.innerHTML = result4;
+//Wir sind bei Ppedv zu Besuch. Morgen verlassen einige ppedv
+
+
+    </script>
+    
+</body>
+</html>

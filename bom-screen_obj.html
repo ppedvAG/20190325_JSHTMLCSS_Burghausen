@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objekt screen</title>
+</head>
+<body>
+    <h1>Objekt screen</h1>
+    <p>ist selber eine Property vom Objekt window. Repräsentiert nicht das Browserfenster, sondern den Device-Bildschirm</p>
+    <p id="output"></p>
+
+    <script>
+        let breite = screen.width;
+        let hoehe = screen.height;
+        output.innerHTML = "Ihr Bildschirm ist " + screen.width + " breit.";
+        if (breite > hoehe) {
+            alert("landscape");//funktioniert im developer tool, nicht beim verändern von Browser
+        } else {
+            alert("portrait");
+        }    
+    </script>
+    
+</body>
+</html>
