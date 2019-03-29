@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,4 +52,59 @@
     
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>While-Schleife</title>
+</head>
+<body>
+    <p id="output"></p>
+    <script>
+        let text = "";
+        let iterator = 0;
+        while (iterator <= 10) {
+            text = text + iterator; //ANDERS: text += iterator;
+            output.innerHTML = text;
+            iterator = iterator + 1; //ANDERS: iterator++;
+        }
+
+        //A1 Hund nicht ausgeben
+        /* ein bestimmtes Element nicht anzeigen */
+        let a = ["Affe", "Katze", "Hund", "Huhn", "Pferd"];
+        let text2 = "";
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] == "Hund") {
+                continue;
+            }
+            text2 += a[i];
+            output.innerHTML = text2;
+        }
+        //continue, break;
+        
+        //A2 Nach dem Hund keine Ausgabe
+        let text3 = "";
+        for (let i = 0; i < a.length; i++) {
+            text3 += " " + a[i];            
+            if (a[i] == "Hund") {
+                break;
+            }
+        }
+        output.innerHTML = text3;
+        /* andere Lösung */
+        let text4 = "";
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] == "Huhn") {
+                break;
+            }  
+            text4 = text4 + " " + a[i];
+        }
+        output.innerHTML = text4;
+    
+    </script>
+</body>
+>>>>>>> f07222947c44ff5e63d5784e2015a0f0fe88598b
 </html>

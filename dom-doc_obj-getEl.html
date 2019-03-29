@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -61,3 +62,68 @@
     </script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zugriff auf HTML-Elemente</title>
+    <style>
+      .cssClass {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- (div.wrapper>img)*3 -->
+    <div class="wrapper">
+      <h3>Überschrift h3</h3>
+      <p id="p1">Paragraph1<a href="">Link1</a></p>
+      <img src="https://picsum.photos/200/300/?random" alt="ein Bild" />
+    </div>
+    <div class="wrapper">
+      <h3 class="cssClass">Überschrift h3</h3>
+      <p class="cssClass">Paragraph2<a href="">Link2</a></p>
+      <img src="https://picsum.photos/200/300/?random" alt="ein Bild" />
+    </div>
+    <div class="wrapper">
+      <h3>
+        Überschrift h3
+        <button type="button" onclick="makeRed()">RED</button>
+      </h3>
+      <p>Paragraph3<a href="">Link3</a></p>
+      <img src="https://picsum.photos/200/300/?random" alt="ein Bild" />
+    </div>
+
+    <script>
+      //getElementById
+      //schon mehrmals angewendet
+
+      //getElementsByTagName
+      let arr = [];
+      arr = document.getElementsByTagName("p");
+      arr[0].style.border = "2px solid black";
+      arr[1].style.border = "2px solid black";
+      arr[2].style.border = "2px solid black";
+      console.log(arr);
+
+      //getElementsByClassName
+      let arr1 = [];
+      arr1 = document.getElementsByClassName("cssClass");
+      arr1[0].style.color = "green";
+      arr1[1].style.color = "green";
+
+      //setAttribute(attr_name:string , attr_value:string)
+      function makeRed() {
+        let arr2 = [];
+        arr2 = document.getElementsByTagName("h3");
+        arr2[2].setAttribute("class", "cssClass");
+      }
+
+      document.createElement("div");
+    </script>
+  </body>
+</html>
+>>>>>>> f07222947c44ff5e63d5784e2015a0f0fe88598b

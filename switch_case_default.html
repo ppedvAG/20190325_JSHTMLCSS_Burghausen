@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,4 +44,51 @@
     </script>
     
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Switch Case</title>
+</head>
+<body>
+    <input type="text" id="inp">
+    <button onclick="textOutput()" id="btn">OK</button>
+    <p id="output"></p>
+
+    <script>
+        function textOutput() {
+            switch(inp.value.toLowerCase()) {
+                case "montag":
+                output.innerHTML = "Angebot des Tages: Pizza";
+                break;
+                case "dienstag":
+                output.innerHTML = "Angebot des Tages: Döner";
+                break;
+                case "mittwoch":
+                output.innerHTML = "Angebot des Tages: Burger";
+                break;
+                case "donnerstag":
+                output.innerHTML = "Angebot des Tages: Pasta";
+                break;
+                case "freitag":
+                output.innerHTML = "Angebot des Tages: Pilzpfanne";
+                break;
+                case "samstag":
+                output.innerHTML = "Angebot des Tages: Gemüsepfanne";
+                break;
+                case "sonntag":
+                output.innerHTML = "Angebot des Tages: Salat";
+                break;
+                default: 
+                output.innerHTML = "Geben Sie einen Wochentag ein";
+
+            }
+        }
+    </script>
+    
+</body>
+>>>>>>> f07222947c44ff5e63d5784e2015a0f0fe88598b
 </html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -205,3 +206,212 @@
     </script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Formulare</title>
+    <style>
+    /* select {
+        background-color: yellow;
+    } */
+    </style>
+  </head>
+  <body>
+    <form action="#">
+      <h3>
+        fieldset zum Gruppieren von Inputs
+      </h3>
+      <fieldset>
+        <legend>Name</legend>
+        <div>
+          <label for="firstname">FIRSTNAME: </label>
+          <input type="text" name="firstname" placeholder="Max" />
+        </div>
+
+        <div>
+          <label for="lastname">LASTNAME: </label>
+          <input type="text" name="lastname" placeholder="Mustermann" />
+        </div>
+      </fieldset>
+
+      <h3>RegExp als Pattern in Input verwenden</h3>
+      <div>
+        <label for="telNr">TEL</label
+        ><input
+          type="text"
+          name="telNr"
+          placeholder=""
+          pattern="\+49\d{11}"
+          title="min 11 Zeichen mit +49 vorn"
+        />
+      </div>
+      <hr />
+
+      <h3>min max try catch</h3>
+      <div>
+        <label for="alter">ALTER</label
+        ><input
+          id="alterInput"
+          type="number"
+          min="1"
+          max="120"
+          name="alter"
+          placeholder="Geben Sie Ihr Alter ein"
+        />
+        <button type="button" onclick="trycatch()">OK</button>
+        <p id="alterOutput"></p>
+      </div>
+
+      <h3>passwort & event object</h3>
+      <div>
+        <label for="pw"></label
+        ><input
+          type="password"
+          pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+          name="pw"
+          placeholder="Geben Sie Ihr Passwort ein"
+          title="min 8 Zeichen"
+          onkeypress="return wasEnter(event, this)"
+        />
+      </div>
+      <hr />
+
+      <h3>Input type Date</h3>
+      <div>
+        <label for="datum">DATUM</label
+        ><input type="date" name="datum" placeholder="" />
+      </div>
+      <hr />
+
+      <h3>Input type URL</h3>
+      <div>
+        <label for="homepage">HOMEPAGE</label
+        ><input type="url" name="homepage" value="https://" />
+      </div>
+      <hr />
+
+      <h3>Input tape range</h3>
+      <div>
+        <label for="price"></label
+        ><input
+          type="range"
+          name="price"
+          id="rang"
+          min="30"
+          max="200"
+          step="20"
+          value="70"
+          oninput="showValue()"
+        />
+        <!-- Value wird nur beim ersten Laden der Seite gesetzt. 
+            Beim Neuladen bleibt der Schieber dort, wo er war -->
+        <p id="priceOutput"></p>
+      </div>
+      <hr />
+
+      <h3>Input type color - Color Picker</h3>
+      <div>
+        <label for=""></label><input type="color" name="" placeholder="" />
+      </div>
+      <hr>
+
+      <h3>Select - Option / Dropdown Menu</h3>
+      <select name="obst" id="obstSelect" onchange="changeColor()">
+          <option value="Kiwi" style="background-color: green">Kiwi</option>
+          <option value="Apfel" style="background-color: yellow">Apfel</option>
+          <option value="Birne" style="background-color: yellowgreen">Birne</option>
+          <option value="Pflaume" style="background-color: violet">Pflaume</option>
+      </select>
+      <hr>
+
+      <h3>Input type radio / Radio Box</h3>
+      <div>
+        <label for="male">HERR</label><input type="radio" id="male" name="gender" checked />
+      </div>
+      <div>
+        <label for="female">FRAU</label><input type="radio" id="female" name="gender" />
+      </div>
+      <hr>
+
+      <h3>Input type checkbox</h3>
+      <h4>Pizza Extras</h4>
+      <div>
+        <label for="corn">Mais</label><input type="checkbox" id="corn" name="" placeholder="" />
+      </div>
+      <div>
+        <label for="salami">Salami</label><input type="checkbox" id="salami" name="" placeholder="" />
+      </div>
+      <div>
+        <label for="mashrooms">Pilze</label><input type="checkbox" id="mashrooms" name="" placeholder="" />
+      </div>
+      <div>
+        <label for="cheese">Käse</label><input type="checkbox" id="cheese" name="" placeholder="" />
+      </div>
+      <hr>
+
+      <h3>Textarea</h3>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <hr>
+
+      <h3>Datalist</h3>
+      <div>
+        <label for="shops">Wie möchten Sie einkaufen?</label><input type="text" list="laeden" name="shops" placeholder="teuer / günstig / egal" />
+        <datalist id="laeden">
+            <option value="Rewe" label="teuer">Rewe</option>
+            <option value="Penny" label="günstig">Penny</option>
+            <option value="Aldi" label="na ja">Aldi</option>
+        </datalist>
+
+      </div>
+
+
+    </form>
+
+    <script>
+      function trycatch() {
+        let alterValue = parseInt(alterInput.value);
+        try {
+          if (alterValue < alterInput.min) throw "Eingabewert zu klein";
+          if (alterValue > alterInput.max) throw "Eingabewert zu groß";
+          if (isNaN(alterValue)) throw "Keine Zahl eingegeben";
+          if (alterValue == undefined) throw "Eingabe fehlt"; //NACHSCHAUEN!
+        } catch (err) {
+          alterOutput.innerHTML = "Meldung von error-object: " + err;
+        } finally {
+          alterInput.value = "";
+        }
+      }
+      function wasEnter(ev, input) {
+        if (ev.keyCode == 13) {
+          console.log(input);
+          if (input.checkValidity() == false) {
+            alert(input.validationMessage);
+          } else {
+            alert("Eingabe stimmt");
+          }
+        }
+      }
+      console.log(rang);
+
+      function showValue() {
+        priceOutput.innerHTML =
+          "Min: " +
+          rang.min +
+          ", Max: " +
+          rang.max +
+          ", aktueller Wert: " +
+          rang.value;
+      }
+      showValue();
+
+      function changeColor() {
+
+      }
+    </script>
+  </body>
+</html>
+>>>>>>> f07222947c44ff5e63d5784e2015a0f0fe88598b

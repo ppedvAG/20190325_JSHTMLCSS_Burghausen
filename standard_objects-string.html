@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,4 +73,80 @@
     </script>
     
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String Objekt</title>
+</head>
+<body>
+    <p id="output"></p>
+
+    <!-- (h3{Methode$}+p#outp$)*9 -->
+    <h3>Methode1</h3>
+    <p id="outp1"></p>
+    <h3>Methode2</h3>
+    <p id="outp2"></p>
+    <h3>Methode3</h3>
+    <p id="outp3"></p>
+    <h3>Methode4</h3>
+    <p id="outp4"></p>
+    <h3>Methode5</h3>
+    <p id="outp5"></p>
+    <p id="outp5_1"></p>
+    <h3>Methode6</h3>
+    <p id="outp6"></p>
+    <h3>Methode7</h3>
+    <p id="outp7"></p>
+    <h3>Methode8</h3>
+    <p id="outp8"></p>
+    <h3>Methode9</h3>
+    <p id="outp9"></p>
+
+    <script>
+        /* Deklarieren von strings Var 1 */
+        /* empfohlen. weil diese strings können mit == und === verglichen werden */
+        /* auch Code ist schneller */
+        let zeichenkette = "irgendwelche zeichenkette";
+        let zk = 'irg. zk'; //Anführungszeichen doppelt oder einfach
+        zk = "irgendwelche \"eine ZK\" zeichenkette";
+        output.innerHTML = zk;
+        output.innerHTML = typeof zk;
+
+        /* Deklarieren von strings Var 2 */
+        let myString = new String("Eine Zeichenkette zum Austesten von String-Methoden");
+        output.innerHTML = typeof myString;
+        let myString1 = new String("Eine Zeichenkette zum Austesten von String-Methoden");
+
+        /* Objekte beim Vergleichen liefern immer false */
+        output.innerHTML = myString === myString1;
+
+        //1. charAt(index: number)
+        outp1.innerHTML = "an der Stelle 8 steht ein Zeichen: " + myString.charAt(8);
+        //2. indexOf(char: string)
+        outp2.innerHTML = "Zeichen z steht an der Stelle: " + myString.indexOf("z");
+        //myString = "";
+        //3. lastIndexOf(char: string)
+        outp3.innerHTML = "Zeichen t erscheint zum letzten Mal an der Stelle: " + myString.lastIndexOf("t");
+        console.log("Zeichen t erscheint zum letzten Mal an der Stelle: " + myString.lastIndexOf("t"));
+        //4. slice(index:number, index:number)
+        outp4.innerHTML = "Mit slice(5, 17) schneidet man ein Substring aus: " + myString.slice(5, 17);
+        //5. split('')
+        outp5.innerHTML = "Mit split('') trennt man die ZK in einzelne Zeichen: " + myString.split('');
+        outp5_1.innerHTML = "Mit split('von') wird die ZK an der Stelle von gesplittet: " + myString.split('von');
+        //6. substr(index:number, anzahl_von_char:number)
+        outp6.innerHTML = "substr(5, 7): " + myString.substr(5, 7);
+        //7. toLowerCase()
+        outp7.innerHTML = "toLowerCase(): " + myString.toLowerCase();
+        //8. toUpperCase()
+        outp8.innerHTML = "toUpperCase(): " + myString.toUpperCase();
+        //9. concat(arg1:string)
+        outp9.innerHTML = "concatenate mit concat('zusatz'): " + myString.concat("zusatz");
+    </script>
+    
+</body>
+>>>>>>> f07222947c44ff5e63d5784e2015a0f0fe88598b
 </html>
