@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,50 +42,4 @@
     </script>
     
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Let vs. Var</title>
-</head>
-<body>
-
-    <script>
-        /* deklarieren */
-        var v;
-        let l;
-
-        /* initialisieren */
-        v = 4;
-        l = 5;
-
-        /* redeklarieren */
-        var v = 4;
-        //let l = 5; //wirft Fehler auf
-        //var l = 5; //dasselbe
-        console.log("v ist Eigenschaft von window, l aber nicht" + window);
-
-        /* Scope von var */
-        var c = 5;
-        {
-            var c = 6;
-            console.log("var c in geschw. Klammern: " + c);
-        }
-        console.log("var c außerhalb von geschw. Klammern: " + c);
-
-        /* Scope von let */
-        let d = 5;
-        {
-            let d = 6;
-            console.log("let d in geschw. Klammern: " + d);
-        }
-        console.log("let d außerhalb von geschw. Klammern: " + d);
-
-    </script>
-    
-</body>
->>>>>>> f07222947c44ff5e63d5784e2015a0f0fe88598b
 </html>

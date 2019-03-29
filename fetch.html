@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,41 +33,4 @@
 
     
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fetch Methode</title>
-</head>
-<body>
-    <h1>Posts</h1>
-    <p>Sie haben bisher folgende Posts veröffentlicht:</p>
-    <ol id="liste"></ol>
-    <p id="output"></p>
-
-    <script>
-        //fetch('von_wo').then(was_tun);
-        fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(myJson){
-            let arr = [];
-            //arr[i] = 
-            let longstring = JSON.stringify(myJson);
-            longstring.split();
-            //id == 1?
-            //key == title?
-            //for / while loop
-            //liste.innerHTML = <li> + title.value + </li>
-        });
-    </script>
-
-
-    
-</body>
->>>>>>> f07222947c44ff5e63d5784e2015a0f0fe88598b
 </html>
